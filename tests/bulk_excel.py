@@ -28,7 +28,7 @@ def test_acc():
         extract = r.get_ranked_phrases()
 
         try:
-            extracts.append(extract)
+            extracts.append(extract[0])
             questions.append(question)
         except:
             pass
@@ -38,7 +38,7 @@ def test_acc():
 
     dic = {'질문': questions, '추출키워드': extracts}
 
-    pandas_handler.write_xlsx('extractor_list', dic)
+    pandas_handler.write_xlsx('extractor_top2', dic)
 
 
 test_acc()
